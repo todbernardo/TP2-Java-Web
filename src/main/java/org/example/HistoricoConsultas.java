@@ -1,5 +1,9 @@
 package org.example;
 
+import java.util.List;
+
 public interface HistoricoConsultas {
-    void verConsultas(Consulta consulta);
+
+    void addConsulta(Consulta consulta);
+    List<Consulta> mostrarConsultas();
 }

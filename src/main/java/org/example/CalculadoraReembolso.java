@@ -1,16 +1,17 @@
 package org.example;
 
 public class CalculadoraReembolso {
-    AutorizadorReembolso autorizador;
-    Consulta consulta;
+    private AutorizadorReembolso autorizador;
 
-    public double reembolsar(double valor, double percentual, Paciente paciente) {
+    public CalculadoraReembolso(AutorizadorReembolso autorizador) {
+        this.autorizador = autorizador;
+    }
+    public double calc(Consulta consulta, PlanoSaude plano, Paciente paciente) {
 
          if (!autorizador.autorizarReembolso(consulta)) {
-            throw new RuntimeException("Reembolso não autorizado.");
+            throw new RuntimeException("Reembolso nao autorizado!");
         }
-        return valor * percentual;
+         double valorTotal = consulta.getValor() * plano.calcPercent();
+        return Math.min(valorTotal, 150);
     }
-
-
 }

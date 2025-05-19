@@ -2,10 +2,12 @@ package org.example;
 
 public class Consulta {
     public double Valor;
-    public double Percentual;
 
-    public Consulta(double percentual, double valor) {
-        Percentual = percentual;
+    public Consulta(double valor) {
         Valor = valor;
+    }
+
+    public double getValor() {
+        return Valor;
     }
 }
