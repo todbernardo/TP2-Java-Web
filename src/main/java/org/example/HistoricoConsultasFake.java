@@ -3,5 +3,6 @@ package org.example;
 import java.util.List;
 
 public interface HistoricoConsultasFake {
-    List<Paciente> dadosConsultas();
+    void guardarDados(HistoricoConsultas consulta);
+    List<Consulta> dadosConsultas();
 }
